@@ -1,0 +1,10 @@
+{
+"languageserver": {
+      "sourcekit-lsp": {
+              "filetypes": ["swift"],
+              "command": "/usr/share/swift/usr/bin/sourcekit-lsp",
+              "args": [],
+              "rootPatterns": ["Package.swift"]
+              }
+            }
+}
