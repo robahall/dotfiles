@@ -21,6 +21,7 @@ augroup END
 let g:NERDSpaceDelims=1          " a space after the comment sign: '# x', not '#x'
 let g:NERDDefaultAlign='left'    " comment signs in one column
 let g:NERDTrimTrailingWhitespace=1
+let g:NERDCustomDelimiters={'python': {'left': '#'}}   " the default '# ' plus NERDSpaceDelims gave two spaces
 
 "-- FZF CONFIG
 nnoremap <C-p> :Files<CR>
