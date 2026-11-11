@@ -3,10 +3,6 @@ syntax on
 set fileformat=unix
 set encoding=UTF-8
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -14,6 +10,7 @@ set autoindent
 set smartindent
 set smarttab
 set expandtab
+autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
 set nowrap
 set list
 set listchars=eol:.,tab:>-,trail:~,extends:>,precedes:<
@@ -34,7 +31,7 @@ set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set ignorecase
 set smartcase
@@ -44,11 +41,14 @@ nnoremap <CR> :noh<CR><CR>:<backspace>
 
 so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim
-so ~/.vim/autoclose.vim
+" so ~/.vim/autoclose.vim  " replaced by coc-pairs
 
 "-- COLOR & THEME CONFIG
 " set termguicolors
 let g:gruvbox_italic=1
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
+
+
+set laststatus=2
