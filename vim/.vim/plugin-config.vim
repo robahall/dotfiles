@@ -17,6 +17,11 @@ augroup nerdtree_refresh
   autocmd BufEnter NERD_tree_* silent! NERDTreeRefreshRoot
 augroup END
 
+"-- NERD COMMENTER CONFIG
+let g:NERDSpaceDelims=1          " a space after the comment sign: '# x', not '#x'
+let g:NERDDefaultAlign='left'    " comment signs in one column
+let g:NERDTrimTrailingWhitespace=1
+
 "-- FZF CONFIG
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>g :Rg<CR>
