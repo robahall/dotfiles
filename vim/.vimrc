@@ -37,7 +37,23 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-nnoremap <CR> :noh<CR><CR>:<backspace>
+" Enter clears search highlight, but still opens an entry in the quickfix list
+nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ':noh<CR><CR>'
+
+"-- FIND FILES AND SEARCH TEXT (built in)
+set path+=**
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=*/.git/*,*/node_modules/*,*/__pycache__/*,*/.venv/*
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+endif
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
+
+"-- DEFAULTS LOST WHEN A .vimrc EXISTS
+set backspace=indent,eol,start
+set hidden
 
 so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim

@@ -17,6 +17,11 @@ augroup nerdtree_refresh
   autocmd BufEnter NERD_tree_* silent! NERDTreeRefreshRoot
 augroup END
 
+"-- FZF CONFIG
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+
 "-- POLYGLOT CONFIG
 
 "-- COC CONFIG
